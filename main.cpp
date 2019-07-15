@@ -4,7 +4,9 @@
 
 int main()
 {
+    Card card(0, 0);
 
+    card.display();
 
     return 0;
 }

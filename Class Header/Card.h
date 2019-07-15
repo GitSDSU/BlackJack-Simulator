@@ -1,13 +1,14 @@
 #ifndef CARD_H
 #define CARD_H
 
-#include <string>
-
 class Card
 {
     public:
         Card(int, int);
         ~Card();
+        int get_rank() const;
+        int get_suit() const;
+        void display() const;
 
     protected:
 
