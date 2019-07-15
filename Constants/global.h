@@ -1,0 +1,8 @@
+#ifndef GLOBAL_H_INCLUDED
+#define GLOBAL_H_INCLUDED
+
+#define NUM_CARDS 52
+#define NUM_DECKS 6
+#define NUM_SUITS 4
+
+#endif // GLOBAL_H_INCLUDED

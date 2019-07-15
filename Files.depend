@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1563158838 source:c:\users\admin\desktop\blackjack-simulator\files\main.cpp
+	<iostream>
+	"Constants\global.h"
+	"Class Header\Card.h"
+
+1563158170 c:\users\admin\desktop\blackjack-simulator\files\global.h
+
+1563157336 c:\users\admin\desktop\blackjack-simulator\files\global\global.h
+
+1563157336 c:\users\admin\desktop\blackjack-simulator\files\constants\global.h
+
+1563158896 c:\users\admin\desktop\blackjack-simulator\files\class header\card.h
+	<string>
+
