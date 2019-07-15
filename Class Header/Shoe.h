@@ -13,6 +13,7 @@ class Shoe
         Shoe();
         ~Shoe();
         void display() const;
+        void shuffle();
 
     protected:
 

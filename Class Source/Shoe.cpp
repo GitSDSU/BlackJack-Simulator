@@ -21,7 +21,13 @@ void Shoe::display() const
     int i = 1;
     for (auto it = shoe.begin(); it != shoe.end(); ++it)
     {
-        std::cout << "Deck " << i++ << ":" << '\n';
+        std::cout << '\n' << "Deck " << i++ << ":" << '\n';
         (*it)->display();
     }
+}
+
+void Shoe::shuffle()
+{
+    for (auto it = shoe.begin(); it != shoe.end(); ++it)
+        (*it)->shuffle();
 }

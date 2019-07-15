@@ -13,6 +13,7 @@ class Deck
         Deck();
         ~Deck();
         void display() const;
+        void shuffle();
 
     protected:
 

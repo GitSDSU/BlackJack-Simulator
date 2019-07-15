@@ -22,3 +22,18 @@ void Deck::display() const
     for (auto it = deck.begin(); it != deck.end(); ++it)
         (*it)->display();
 }
+
+void Deck::shuffle()
+{
+    Card * temp;
+
+    int r;
+
+    for (int i = 0; i < NUM_CARDS; i++)
+    {
+        temp = deck[i];
+        r = (rand() % NUM_CARDS);
+        deck[i] = deck[r];
+        deck[r] = temp;
+    }
+}
