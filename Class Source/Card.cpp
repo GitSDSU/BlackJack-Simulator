@@ -1,8 +1,9 @@
 #include "..\Class Header\Card.h"
 
-Card::Card()
+Card::Card(int r, int s)
 {
-    //ctor
+    rank = r;
+    suit = s;
 }
 
 Card::~Card()

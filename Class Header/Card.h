@@ -6,12 +6,14 @@
 class Card
 {
     public:
-        Card();
+        Card(int, int);
         ~Card();
 
     protected:
 
     private:
+        int rank;
+        int suit;
 };
 
 #endif // CARD_H
