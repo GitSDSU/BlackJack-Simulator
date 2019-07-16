@@ -14,6 +14,7 @@ class Deck
         ~Deck();
         void display() const;
         void shuffle();
+        Card * pop();
 
     protected:
 

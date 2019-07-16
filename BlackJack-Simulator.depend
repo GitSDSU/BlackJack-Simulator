@@ -5,9 +5,9 @@
 	<iostream>
 	<assert.h>
 
-1563170152 c:\users\admin\desktop\blackjack-simulator\class header\card.h
+1563252505 c:\users\admin\desktop\blackjack-simulator\class header\card.h
 
-1563250640 source:c:\users\admin\desktop\blackjack-simulator\main.cpp
+1563250748 source:c:\users\admin\desktop\blackjack-simulator\main.cpp
 	<iostream>
 	"Constants\global.h"
 	"Class Header\Manager.h"
@@ -15,12 +15,12 @@
 1563163461 c:\users\admin\desktop\blackjack-simulator\constants\global.h
 	<string>
 
-1563171264 source:c:\users\admin\desktop\blackjack-simulator\class source\deck.cpp
+1563253135 source:c:\users\admin\desktop\blackjack-simulator\class source\deck.cpp
 	"..\Class Header\Deck.h"
 	"..\Constants\global.h"
 	"..\Class Header\Card.h"
 
-1563171264 c:\users\admin\desktop\blackjack-simulator\class header\deck.h
+1563252505 c:\users\admin\desktop\blackjack-simulator\class header\deck.h
 	<vector>
 
 1563171455 source:c:\users\admin\desktop\blackjack-simulator\class source\shoe.cpp
@@ -29,7 +29,7 @@
 	"..\Class Header\Deck.h"
 	<iostream>
 
-1563171347 c:\users\admin\desktop\blackjack-simulator\class header\shoe.h
+1563253440 c:\users\admin\desktop\blackjack-simulator\class header\shoe.h
 	<vector>
 
 1563250717 c:\users\admin\desktop\blackjack-simulator\class header\manager.h

@@ -31,3 +31,18 @@ void Shoe::shuffle()
     for (auto it = shoe.begin(); it != shoe.end(); ++it)
         (*it)->shuffle();
 }
+
+Card * Shoe::pop()
+{
+    Card * return_card = NULL;
+
+    int i = 0;
+
+    while (return_card == NULL)
+    {
+        return_card = shoe[i]->pop();
+        i++;
+    }
+
+    return return_card;
+}

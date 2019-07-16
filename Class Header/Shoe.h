@@ -3,6 +3,7 @@
 
 #include <vector>
 
+class Card;
 class Deck;
 
 typedef std::vector<Deck *> decks;
@@ -14,6 +15,7 @@ class Shoe
         ~Shoe();
         void display() const;
         void shuffle();
+        Card * pop();
 
     protected:
 

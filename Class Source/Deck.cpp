@@ -37,3 +37,12 @@ void Deck::shuffle()
         deck[r] = temp;
     }
 }
+
+Card * Deck::pop()
+{
+    Card * return_card;
+
+    (deck.size()-1 >= 0) ? return_card = deck[deck.size()-1] : return_card = NULL;
+
+    return return_card;
+}
