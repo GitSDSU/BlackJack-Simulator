@@ -8,6 +8,7 @@ class Manager
     public:
         Manager();
         ~Manager();
+        void test();
 
     protected:
 
