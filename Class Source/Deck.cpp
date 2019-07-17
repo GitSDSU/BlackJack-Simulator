@@ -38,6 +38,11 @@ void Deck::shuffle()
     }
 }
 
+/*
+*   Determine whether the function should return a local object or a pointer.
+*   How to delete/free the last element of the vector while passing the value
+*   to a player or dealer.
+*/
 Card * Deck::pop()
 {
     Card * return_card;

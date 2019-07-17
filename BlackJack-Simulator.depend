@@ -23,7 +23,7 @@
 1563252505 c:\users\admin\desktop\blackjack-simulator\class header\deck.h
 	<vector>
 
-1563171455 source:c:\users\admin\desktop\blackjack-simulator\class source\shoe.cpp
+1563253415 source:c:\users\admin\desktop\blackjack-simulator\class source\shoe.cpp
 	"..\Class Header\Shoe.h"
 	"..\Constants\global.h"
 	"..\Class Header\Deck.h"
