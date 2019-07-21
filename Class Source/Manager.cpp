@@ -3,6 +3,10 @@
 #include "..\Constants\global.h"
 #include <ctime>
 
+/// For testing purposes
+#include <iostream>
+#include "..\Class Header\Card.h"
+
 Manager::Manager()
 {
     srand(time(0));
@@ -18,4 +22,5 @@ void Manager::test()
 {
     shoe->shuffle();
     shoe->display();
+
 }

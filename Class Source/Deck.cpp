@@ -17,10 +17,16 @@ Deck::~Deck()
     deck.clear();
 }
 
-void Deck::display() const
+int Deck::display() const
 {
+    int card_counter = 0;
     for (auto it = deck.begin(); it != deck.end(); ++it)
+    {
+        card_counter++;
         (*it)->display();
+    }
+
+    return card_counter;
 }
 
 void Deck::shuffle()
@@ -38,16 +44,17 @@ void Deck::shuffle()
     }
 }
 
-/*
+/**
 *   Determine whether the function should return a local object or a pointer.
 *   How to delete/free the last element of the vector while passing the value
 *   to a player or dealer.
-*/
+**/
 Card * Deck::pop()
 {
     Card * return_card;
 
     (deck.size()-1 >= 0) ? return_card = deck[deck.size()-1] : return_card = NULL;
+    deck.pop_back();
 
     return return_card;
 }

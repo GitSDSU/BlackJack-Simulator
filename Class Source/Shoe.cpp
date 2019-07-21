@@ -18,12 +18,13 @@ Shoe::~Shoe()
 
 void Shoe::display() const
 {
-    int i = 1;
+    int deck_counter = 0, card_counter = 0;
     for (auto it = shoe.begin(); it != shoe.end(); ++it)
     {
-        std::cout << '\n' << "Deck " << i++ << ":" << '\n';
-        (*it)->display();
+        std::cout << '\n' << "Deck " << ++deck_counter << ":" << '\n';
+        card_counter += (*it)->display();
     }
+    std::cout << "Total # of cards in shoe: " << card_counter << '\n';
 }
 
 void Shoe::shuffle()
@@ -43,6 +44,8 @@ Card * Shoe::pop()
         return_card = shoe[i]->pop();
         i++;
     }
+
+    std::cout << "# of cards: " << i << '\n';
 
     return return_card;
 }

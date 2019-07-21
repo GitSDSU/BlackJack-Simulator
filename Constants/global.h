@@ -4,7 +4,7 @@
 #include <string>
 
 #define NUM_CARDS 52
-#define NUM_DECKS 6
+#define NUM_DECKS 5
 #define NUM_RANKS 13
 #define NUM_SUITS 4
 

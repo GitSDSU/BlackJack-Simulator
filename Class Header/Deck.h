@@ -12,7 +12,7 @@ class Deck
     public:
         Deck();
         ~Deck();
-        void display() const;
+        int display() const;
         void shuffle();
         Card * pop();
 

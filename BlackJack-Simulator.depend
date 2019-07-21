@@ -12,18 +12,18 @@
 	"Constants\global.h"
 	"Class Header\Manager.h"
 
-1563163461 c:\users\admin\desktop\blackjack-simulator\constants\global.h
+1563679896 c:\users\admin\desktop\blackjack-simulator\constants\global.h
 	<string>
 
-1563253135 source:c:\users\admin\desktop\blackjack-simulator\class source\deck.cpp
+1563680466 source:c:\users\admin\desktop\blackjack-simulator\class source\deck.cpp
 	"..\Class Header\Deck.h"
 	"..\Constants\global.h"
 	"..\Class Header\Card.h"
 
-1563252505 c:\users\admin\desktop\blackjack-simulator\class header\deck.h
+1563680466 c:\users\admin\desktop\blackjack-simulator\class header\deck.h
 	<vector>
 
-1563253415 source:c:\users\admin\desktop\blackjack-simulator\class source\shoe.cpp
+1563680466 source:c:\users\admin\desktop\blackjack-simulator\class source\shoe.cpp
 	"..\Class Header\Shoe.h"
 	"..\Constants\global.h"
 	"..\Class Header\Deck.h"
@@ -32,11 +32,13 @@
 1563253440 c:\users\admin\desktop\blackjack-simulator\class header\shoe.h
 	<vector>
 
-1563250717 c:\users\admin\desktop\blackjack-simulator\class header\manager.h
+1563679557 c:\users\admin\desktop\blackjack-simulator\class header\manager.h
 
-1563250717 source:c:\users\admin\desktop\blackjack-simulator\class source\manager.cpp
+1563680290 source:c:\users\admin\desktop\blackjack-simulator\class source\manager.cpp
 	"..\Class Header\Manager.h"
 	"..\Class Header\Shoe.h"
 	"..\Constants\global.h"
 	<ctime>
+	<iostream>
+	"..\Class Header\Card.h"
 

@@ -2,6 +2,7 @@
 #define MANAGER_H_INCLUDED
 
 class Shoe;
+class Card; /// For testing purposes
 
 class Manager
 {
