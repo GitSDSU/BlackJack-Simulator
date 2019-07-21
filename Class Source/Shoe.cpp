@@ -37,15 +37,18 @@ Card * Shoe::pop()
 {
     Card * return_card = NULL;
 
-    int i = 0;
+    int i = NUM_DECKS - 1;
 
     while (return_card == NULL)
     {
         return_card = shoe[i]->pop();
-        i++;
+        i--;
+        if (i < 0 && return_card == NULL)
+        {
+            std::cout << "Ran out of cards... \n";
+            break;
+        }
     }
-
-    std::cout << "# of cards: " << i << '\n';
 
     return return_card;
 }

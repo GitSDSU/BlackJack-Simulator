@@ -32,11 +32,13 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="Class Header/Card.h" />
+		<Unit filename="Class Header/Dealer.h" />
 		<Unit filename="Class Header/Deck.h" />
 		<Unit filename="Class Header/Manager.h" />
 		<Unit filename="Class Header/Player.h" />
 		<Unit filename="Class Header/Shoe.h" />
 		<Unit filename="Class Source/Card.cpp" />
+		<Unit filename="Class Source/Dealer.cpp" />
 		<Unit filename="Class Source/Deck.cpp" />
 		<Unit filename="Class Source/Manager.cpp" />
 		<Unit filename="Class Source/Player.cpp" />

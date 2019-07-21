@@ -15,7 +15,7 @@
 1563679896 c:\users\admin\desktop\blackjack-simulator\constants\global.h
 	<string>
 
-1563680466 source:c:\users\admin\desktop\blackjack-simulator\class source\deck.cpp
+1563749866 source:c:\users\admin\desktop\blackjack-simulator\class source\deck.cpp
 	"..\Class Header\Deck.h"
 	"..\Constants\global.h"
 	"..\Class Header\Card.h"
@@ -23,7 +23,7 @@
 1563680466 c:\users\admin\desktop\blackjack-simulator\class header\deck.h
 	<vector>
 
-1563680466 source:c:\users\admin\desktop\blackjack-simulator\class source\shoe.cpp
+1563748034 source:c:\users\admin\desktop\blackjack-simulator\class source\shoe.cpp
 	"..\Class Header\Shoe.h"
 	"..\Constants\global.h"
 	"..\Class Header\Deck.h"
@@ -34,9 +34,11 @@
 
 1563744317 c:\users\admin\desktop\blackjack-simulator\class header\manager.h
 
-1563680541 source:c:\users\admin\desktop\blackjack-simulator\class source\manager.cpp
+1563748891 source:c:\users\admin\desktop\blackjack-simulator\class source\manager.cpp
 	"..\Class Header\Manager.h"
 	"..\Class Header\Shoe.h"
+	"..\Class Header\Dealer.h"
+	"..\Class Header\Player.h"
 	"..\Constants\global.h"
 	<ctime>
 	<iostream>

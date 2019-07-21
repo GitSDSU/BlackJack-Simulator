@@ -49,12 +49,23 @@ void Deck::shuffle()
 *   How to delete/free the last element of the vector while passing the value
 *   to a player or dealer.
 **/
+/**
+*   vector.size() is of type unsigned. Needs to be changed to an integer.
+**/
 Card * Deck::pop()
 {
     Card * return_card;
+    int deck_size = deck.size() - 1;
 
-    (deck.size()-1 >= 0) ? return_card = deck[deck.size()-1] : return_card = NULL;
-    deck.pop_back();
+    if (deck_size >= 0)
+    {
+        return_card = deck[deck_size];
+        deck.pop_back();
+    }
+    else
+    {
+        return_card = NULL;
+    }
 
     return return_card;
 }
