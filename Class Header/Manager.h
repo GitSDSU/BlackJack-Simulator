@@ -2,6 +2,9 @@
 #define MANAGER_H_INCLUDED
 
 class Shoe;
+class Dealer;
+class Player;
+
 class Card; /// For testing purposes
 
 class Manager
@@ -15,6 +18,8 @@ class Manager
 
     private:
         Shoe * shoe;
+        Dealer * dealer;
+        Player * player;
 };
 
 #endif // MANAGER_H_INCLUDED

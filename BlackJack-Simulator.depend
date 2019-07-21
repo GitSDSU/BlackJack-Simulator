@@ -32,7 +32,7 @@
 1563253440 c:\users\admin\desktop\blackjack-simulator\class header\shoe.h
 	<vector>
 
-1563679557 c:\users\admin\desktop\blackjack-simulator\class header\manager.h
+1563744317 c:\users\admin\desktop\blackjack-simulator\class header\manager.h
 
 1563680541 source:c:\users\admin\desktop\blackjack-simulator\class source\manager.cpp
 	"..\Class Header\Manager.h"
@@ -50,10 +50,11 @@
 	<vector>
 	<iostream>
 
-1563740443 source:c:\users\admin\desktop\blackjack-simulator\class source\dealer.cpp
+1563743937 source:c:\users\admin\desktop\blackjack-simulator\class source\dealer.cpp
 	"..\Class Header\Dealer.h"
+	"..\Class Header\Card.h"
 
-1563740589 c:\users\admin\desktop\blackjack-simulator\class header\dealer.h
+1563743913 c:\users\admin\desktop\blackjack-simulator\class header\dealer.h
 	<iostream>
 	<vector>
 
