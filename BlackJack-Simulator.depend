@@ -34,11 +34,17 @@
 
 1563679557 c:\users\admin\desktop\blackjack-simulator\class header\manager.h
 
-1563680290 source:c:\users\admin\desktop\blackjack-simulator\class source\manager.cpp
+1563680541 source:c:\users\admin\desktop\blackjack-simulator\class source\manager.cpp
 	"..\Class Header\Manager.h"
 	"..\Class Header\Shoe.h"
 	"..\Constants\global.h"
 	<ctime>
 	<iostream>
 	"..\Class Header\Card.h"
+
+1563689976 source:c:\users\admin\desktop\blackjack-simulator\class source\player.cpp
+	"..\Class Header\Player.h"
+
+1563690055 c:\users\admin\desktop\blackjack-simulator\class header\player.h
+	<vector>
 
