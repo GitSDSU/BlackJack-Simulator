@@ -42,9 +42,18 @@
 	<iostream>
 	"..\Class Header\Card.h"
 
-1563689976 source:c:\users\admin\desktop\blackjack-simulator\class source\player.cpp
+1563690202 source:c:\users\admin\desktop\blackjack-simulator\class source\player.cpp
 	"..\Class Header\Player.h"
+	"..\Class Header\Card.h"
 
-1563690055 c:\users\admin\desktop\blackjack-simulator\class header\player.h
+1563690165 c:\users\admin\desktop\blackjack-simulator\class header\player.h
+	<vector>
+	<iostream>
+
+1563740443 source:c:\users\admin\desktop\blackjack-simulator\class source\dealer.cpp
+	"..\Class Header\Dealer.h"
+
+1563740589 c:\users\admin\desktop\blackjack-simulator\class header\dealer.h
+	<iostream>
 	<vector>
 
