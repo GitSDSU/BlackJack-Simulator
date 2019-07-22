@@ -27,10 +27,14 @@ Manager::~Manager()
 void Manager::test()
 {
     shoe->shuffle();
-    for (int i = 0; i < NUM_CARDS * NUM_DECKS; i++)
+    for (int i = 0; i < 0; i++)
     {
         dealer->Receive_Card(shoe->pop());
     }
-    dealer->Display_Hand();
     shoe->display();
+    dealer->Receive_Card(new Card(2, 0));
+    dealer->Receive_Card(new Card(12, 0));
+    dealer->Receive_Card(new Card(0, 0));
+    dealer->Display_Hand();
+    std::cout << "Hand Value: " << dealer->Get_Hand_Value() << '\n';
 }

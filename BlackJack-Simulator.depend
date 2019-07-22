@@ -52,9 +52,10 @@
 	<vector>
 	<iostream>
 
-1563743937 source:c:\users\admin\desktop\blackjack-simulator\class source\dealer.cpp
+1563766380 source:c:\users\admin\desktop\blackjack-simulator\class source\dealer.cpp
 	"..\Class Header\Dealer.h"
 	"..\Class Header\Card.h"
+	"..\Constants\global.h"
 
 1563752024 c:\users\admin\desktop\blackjack-simulator\class header\dealer.h
 	<iostream>

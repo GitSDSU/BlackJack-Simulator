@@ -43,7 +43,21 @@ int Dealer::Get_Hand_Value()
     /** Add the values of each rank **/
     for (int i = NUM_RANKS - 1; i >= 0; i--)
     {
-
+        if (i == StringValues::ACE)
+        {
+            for (int j = 0; j < card_histogram[i]; j++)
+            {
+                (hand_value > CardValues::TEN) ? hand_value += CardValues::ACE : hand_value += CardValues::ACE + CardValues::TEN;
+            }
+        }
+        else if (i >= StringValues::TEN && i <= StringValues::KING)
+        {
+            hand_value += (CardValues::TEN * card_histogram[i]);
+        }
+        else
+        {
+            hand_value += ((i + 1) * card_histogram[i]);
+        }
     }
 
     return hand_value;
