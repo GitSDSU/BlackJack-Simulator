@@ -29,8 +29,8 @@ void Manager::test()
     shoe->shuffle();
     for (int i = 0; i < NUM_CARDS * NUM_DECKS; i++)
     {
-        dealer->receive_card(shoe->pop());
+        dealer->Receive_Card(shoe->pop());
     }
-    dealer->display_hand();
+    dealer->Display_Hand();
     shoe->display();
 }

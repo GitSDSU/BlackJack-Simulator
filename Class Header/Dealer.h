@@ -13,8 +13,9 @@ class Dealer
     public:
         Dealer();
         ~Dealer();
-        void receive_card(Card *);
-        void display_hand() const;
+        void Receive_Card(Card *);
+        void Display_Hand() const;
+        int Get_Hand_Value();
 
     protected:
 
