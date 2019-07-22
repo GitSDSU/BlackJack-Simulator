@@ -32,9 +32,5 @@ void Manager::test()
         dealer->Receive_Card(shoe->pop());
     }
     shoe->display();
-    dealer->Receive_Card(new Card(2, 0));
-    dealer->Receive_Card(new Card(12, 0));
-    dealer->Receive_Card(new Card(0, 0));
     dealer->Display_Hand();
-    std::cout << "Hand Value: " << dealer->Get_Hand_Value() << '\n';
 }

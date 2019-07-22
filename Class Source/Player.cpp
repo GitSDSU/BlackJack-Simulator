@@ -8,9 +8,5 @@ Player::Player()
 
 Player::~Player()
 {
-    for (auto it = hand.begin(); it != hand.end(); ++it)
-    {
-        delete (*it);
-    }
-    hand.clear();
+
 }
