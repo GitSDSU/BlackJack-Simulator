@@ -8,5 +8,11 @@ Player::Player()
 
 Player::~Player()
 {
-
+    for (auto it = hand.begin(); it != hand.end(); ++it)
+    {
+        for (auto jt = it->begin(); jt != it->end(); ++jt)
+        {
+            delete (*jt);
+        }
+    }
 }
