@@ -5,8 +5,7 @@
 #include <vector>
 
 class Card;
-
-typedef std::vector< Card * > cards;
+class Hand;
 
 class Dealer
 {
@@ -15,13 +14,14 @@ class Dealer
         ~Dealer();
         void Receive_Card(Card *);
         void Display_Hand() const;
-        int Get_Hand_Value();
+        void Reset_Hand();
+        int Next_Action() const;
 
     protected:
 
     private:
         std::string name;
-        cards hand;
+        Hand * hand;
 };
 
 #endif // DEALER_H_INCLUDED

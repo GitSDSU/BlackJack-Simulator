@@ -4,9 +4,10 @@
 #include <string>
 
 #define NUM_CARDS 52
-#define NUM_DECKS 5
+#define NUM_DECKS 6
 #define NUM_RANKS 13
 #define NUM_SUITS 4
+#define STAND_ON_17 17
 
 namespace StringValues
 {
@@ -28,5 +29,7 @@ const std::string suit_string[] =
 {
     "Spade", "Heart", "Clove", "Diamond"
 };
+
+enum Action { Hit, Stand, Split, Double };
 
 #endif // GLOBAL_H_INCLUDED

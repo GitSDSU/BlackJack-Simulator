@@ -5,10 +5,9 @@
 #include <iostream>
 
 class Card;
+class Hand;
 
-/** Use a two-dimensional vector to support splitting **/
-typedef std::vector< Card * > PartialHand;
-typedef std::vector< PartialHand > EntireHand;
+typedef std::vector< Hand * > hands;
 
 class Player
 {
@@ -19,8 +18,8 @@ class Player
     protected:
 
     private:
-        EntireHand hand;
         std::string name;
+        hands hand;
 };
 
 #endif // PLAYER_H_INCLUDED

@@ -28,5 +28,5 @@ int Card::get_suit() const
 
 void Card::display() const
 {
-    std::cout << rank_string[rank] << " of " << suit_string[suit] << '\n';
+    std::cout << rank_string[rank] << " of " << suit_string[suit] << '\n' << std::flush;
 }
