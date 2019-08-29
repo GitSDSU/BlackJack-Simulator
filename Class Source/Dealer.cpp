@@ -14,7 +14,7 @@ Dealer::~Dealer()
     delete hand;
 }
 
-void Dealer::Receive_Card(Card * new_card)
+void Dealer::Receive_Card(const Card * new_card)
 {
     hand->Add_Card(new_card);
 }

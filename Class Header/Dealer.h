@@ -12,7 +12,7 @@ class Dealer
     public:
         Dealer();
         ~Dealer();
-        void Receive_Card(Card *);
+        void Receive_Card(const Card *);
         void Display_Hand() const;
         void Reset_Hand();
         int Next_Action() const;

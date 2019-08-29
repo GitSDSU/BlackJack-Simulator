@@ -14,6 +14,10 @@ class Player
     public:
         Player();
         ~Player();
+        void Delete_Hand();
+        void Display_Hand() const;
+        void Add_Hand();
+        void Split_Hand(const Card *, const Card *);
 
     protected:
 

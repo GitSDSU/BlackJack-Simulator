@@ -4,7 +4,7 @@
 
 Hand::Hand()
 {
-
+    num_cards = 0;
 }
 
 Hand::~Hand()
@@ -15,6 +15,7 @@ Hand::~Hand()
 void Hand::Add_Card(const Card * new_card)
 {
     hand.push_back(new Card(new_card->get_rank(), new_card->get_suit()));
+    num_cards++;
 }
 
 void Hand::Delete_Hand()
@@ -33,6 +34,7 @@ Card * Hand::Split_Hand()
     Card * temp;
     temp = hand[1];
     hand.pop_back();
+    num_cards--;
 
     return temp;
 }
@@ -79,6 +81,11 @@ void Hand::Display_Hand() const
     {
         (*it)->display();
     }
+}
+
+int Hand::Cards_In_Hand() const
+{
+    return num_cards;
 }
 
 

@@ -17,11 +17,13 @@ class Hand
         Card * Split_Hand();
         int Hand_Value();
         void Display_Hand() const;
+        int Cards_In_Hand() const;
 
     protected:
 
     private:
         cards hand;
+        int num_cards;
 };
 
 #endif // HAND_H_INCLUDED
