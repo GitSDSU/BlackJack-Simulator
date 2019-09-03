@@ -5,6 +5,7 @@
 Hand::Hand()
 {
     num_cards = 0;
+    wager = 0;
 }
 
 Hand::~Hand()
@@ -26,6 +27,7 @@ void Hand::Delete_Hand()
     }
 
     hand.clear();
+    wager = 0;
 }
 
 /** Assumes hand only has 2 cards since a hand can only be split before hitting **/
@@ -88,5 +90,96 @@ int Hand::Cards_In_Hand() const
     return num_cards;
 }
 
+bool Hand::Is_Pair() const
+{
+    if (hand[0]->get_rank() == hand[1]->get_rank() && hand.size() == 2)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+bool Hand::Has_Ace() const
+{
+    bool flag = false;
+
+    if ((hand[0]->get_rank() == CardValues::ACE || hand[1]->get_rank() == CardValues::ACE) && hand.size() == 2)
+    {
+        if (hand[0]->get_rank() == CardValues::ACE)
+        {
+            int sum = 0;
+            for (int i = 1; i < (int) hand.size(); i++)
+            {
+                sum += hand[i]->get_rank();
+            }
+            if (sum <= CardValues::TEN)
+            {
+                flag = true;
+            }
+        }
+        else if (hand[1]->get_rank() == CardValues::ACE)
+        {
+            int sum = hand[0]->get_rank();
+            for (int i = 2; i < (int) hand.size(); i++)
+            {
+                sum += hand[i]->get_rank();
+            }
+            if (sum <= CardValues::TEN)
+            {
+                flag = true;
+            }
+        }
+        else
+        {
+            flag = false;
+        }
+    }
+
+    return flag;
+}
+
+int Hand::First_Card() const
+{
+    return hand[0]->get_rank();
+}
+
+int Hand::Second_Card() const
+{
+    return hand[0]->get_rank();
+}
+
+bool Hand::Is_Black_Jack() const
+{
+    if (hand[0]->get_rank() == CardValues::ACE && hand[1]->get_rank() == CardValues::TEN)
+    {
+        return true;
+    }
+    else if (hand[0]->get_rank() == CardValues::TEN && hand[1]->get_rank() == CardValues::ACE)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+void Hand::Double_Wager()
+{
+    wager *= 2;
+}
+
+void Hand::Set_Wager(int w)
+{
+    wager = w;
+}
+
+int Hand::Get_Wager() const
+{
+    return wager;
+}
 
 

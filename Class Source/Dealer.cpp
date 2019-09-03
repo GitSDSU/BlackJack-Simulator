@@ -1,12 +1,14 @@
 #include "..\Class Header\Dealer.h"
 #include "..\Class Header\Card.h"
 #include "..\Class Header\Hand.h"
+#include "..\Class Header\Shoe.h"
 #include "..\Constants\global.h"
 
 Dealer::Dealer()
 {
     name = "Dealer";
     hand = new Hand;
+    chips = DEALER_STARTING_CHIPS;
 }
 
 Dealer::~Dealer()
@@ -38,4 +40,34 @@ int Dealer::Next_Action() const
 
     return action;
 }
+
+void Dealer::Add_Chips(int c)
+{
+    chips += c;
+}
+
+void Dealer::Subtract_Chips(int c)
+{
+    chips -= c;
+}
+
+int Dealer::Face_Up_Card() const
+{
+    return hand->First_Card();
+}
+
+/** Assume dealer has only one card. **/
+void Dealer::Dealer_To_Act(Shoe * shoe)
+{
+    Receive_Card(shoe->pop());
+
+    while (Next_Action() != Action::Stand)
+    {
+        Receive_Card(shoe->pop());
+    }
+}
+
+
+
+
 

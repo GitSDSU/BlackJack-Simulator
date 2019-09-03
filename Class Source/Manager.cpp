@@ -27,10 +27,18 @@ Manager::~Manager()
 void Manager::test()
 {
     shoe->shuffle();
-    for (int i = 0; i < 0; i++)
-    {
-        dealer->Receive_Card(shoe->pop());
-    }
-    shoe->display();
+
+
+    dealer->Receive_Card(shoe->pop());
+    player->Receive_Card(shoe->pop());
+    player->Receive_Card(shoe->pop());
+
     dealer->Display_Hand();
+    player->Display_Hand();
+
+    player->Check_For_Split(dealer->Face_Up_Card(), shoe);
+    dealer->Dealer_To_Act(shoe);
+
+    dealer->Display_Hand();
+    player->Display_Hand();
 }

@@ -6,6 +6,7 @@
 
 class Card;
 class Hand;
+class Shoe;
 
 class Dealer
 {
@@ -16,12 +17,17 @@ class Dealer
         void Display_Hand() const;
         void Reset_Hand();
         int Next_Action() const;
+        void Add_Chips(int);
+        void Subtract_Chips(int);
+        int Face_Up_Card() const;
+        void Dealer_To_Act(Shoe *);
 
     protected:
 
     private:
         std::string name;
         Hand * hand;
+        int chips;
 };
 
 #endif // DEALER_H_INCLUDED

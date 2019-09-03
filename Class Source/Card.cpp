@@ -7,8 +7,57 @@ Card::Card(int r, int s)
 {
     assert(r < NUM_RANKS);
     assert(s < NUM_SUITS);
+
+    switch (r)
+    {
+        case StringValues::ACE :
+            rank = CardValues::ACE;
+            break;
+        case StringValues::TWO :
+            rank = CardValues::TWO;
+            break;
+        case StringValues::THREE :
+            rank = CardValues::THREE;
+            break;
+        case StringValues::FOUR :
+            rank = CardValues::FOUR;
+            break;
+        case StringValues::FIVE :
+            rank = CardValues::FIVE;
+            break;
+        case StringValues::SIX :
+            rank = CardValues::SIX;
+            break;
+        case StringValues::SEVEN :
+            rank = CardValues::SEVEN;
+            break;
+        case StringValues::EIGHT :
+            rank = CardValues::EIGHT;
+            break;
+        case StringValues::NINE :
+            rank = CardValues::NINE;
+            break;
+        case StringValues::TEN :
+            rank = CardValues::TEN;
+            break;
+        case StringValues::JACK :
+            rank = CardValues::JACK;
+            break;
+        case StringValues::QUEEN :
+            rank = CardValues::QUEEN;
+            break;
+        case StringValues::KING :
+            rank = CardValues::KING;
+            break;
+    }
     rank = r;
     suit = s;
+}
+
+Card::Card(const Card & new_card)
+{
+    rank = new_card.rank;
+    suit = new_card.suit;
 }
 
 Card::~Card()
