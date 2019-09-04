@@ -67,7 +67,14 @@ void Dealer::Dealer_To_Act(Shoe * shoe)
     }
 }
 
+int Dealer::Get_Hand_Value() const
+{
+    return hand->Hand_Value();
+}
 
-
+bool Dealer::Has_Black_Jack() const
+{
+    return hand->Is_Black_Jack();
+}
 
 

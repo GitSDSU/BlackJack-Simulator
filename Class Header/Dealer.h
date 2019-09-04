@@ -21,6 +21,8 @@ class Dealer
         void Subtract_Chips(int);
         int Face_Up_Card() const;
         void Dealer_To_Act(Shoe *);
+        int Get_Hand_Value() const;
+        bool Has_Black_Jack() const;
 
     protected:
 

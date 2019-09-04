@@ -9,6 +9,7 @@
 class Card;
 class Hand;
 class Shoe;
+class Dealer;
 
 typedef std::vector< Hand * > hands;
 
@@ -25,6 +26,7 @@ class Player
         void Add_Chips(int);
         void Subtract_Chips(int);
         void Receive_Card(const Card *);
+        void Compare_Hands(Dealer *);
 
     protected:
 

@@ -2,6 +2,7 @@
 #include "..\Class Header\Card.h"
 #include "..\Class Header\Hand.h"
 #include "..\Class Header\Shoe.h"
+#include "..\Class Header\Dealer.h"
 #include "..\Constants\global.h"
 #include <iostream>
 
@@ -522,5 +523,42 @@ void Player::Receive_Card(const Card * new_card)
     hand[0]->Add_Card(new_card);
 }
 
+void Player::Compare_Hands(Dealer * dealer)
+{
+    for (auto it = hand.begin(); it != hand.end(); ++it)
+    {
+        if (dealer->Get_Hand_Value() < (*it)->Hand_Value())
+        {
+            /** Player Wins **/
+            chips += (*it)->Get_Wager() * 2;
+            dealer->Subtract_Chips((*it)->Get_Wager());
+        }
+        else if (dealer->Get_Hand_Value() > (*it)->Hand_Value())
+        {
+            /** Player Loses **/
+            dealer->Add_Chips((*it)->Get_Wager());
+        }
+        else
+        {
+            if (!(dealer->Has_Black_Jack()) && (*it)->Is_Black_Jack())
+            {
+                /** Player Wins **/
+                chips += ((*it)->Get_Wager() * 2.5); /// Blackjack pays 3:2
+                dealer->Subtract_Chips((*it)->Get_Wager() * 1.5);
+            }
+            else if (dealer->Has_Black_Jack() && !((*it)->Is_Black_Jack()))
+            {
+                /** Player Loses **/
+                chips -= ((*it)->Get_Wager() * 0.5);
+                dealer->Add_Chips((*it)->Get_Wager() * 1.5);
+            }
+            else
+            {
+                /** Push **/
+                chips += ((*it)->Get_Wager() * 1.0);
+            }
+        }
+    }
+}
 
 
