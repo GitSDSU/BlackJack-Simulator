@@ -44,7 +44,7 @@
 	<iostream>
 	"..\Class Header\Card.h"
 
-1567644513 source:c:\users\admin\desktop\blackjack-simulator\class source\player.cpp
+1567645546 source:c:\users\admin\desktop\blackjack-simulator\class source\player.cpp
 	"..\Class Header\Player.h"
 	"..\Class Header\Card.h"
 	"..\Class Header\Hand.h"

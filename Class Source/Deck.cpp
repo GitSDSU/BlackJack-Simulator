@@ -8,12 +8,16 @@ Deck::Deck()
     {
         deck.push_back(new Card(i % NUM_RANKS, i % NUM_SUITS));
     }
+
+    deck_counter = 0;
 }
 
 Deck::~Deck()
 {
     for (auto it = deck.begin(); it != deck.end(); ++it)
+    {
         delete *it;
+    }
     deck.clear();
 }
 
@@ -29,6 +33,9 @@ int Deck::display() const
     return card_counter;
 }
 
+/**
+*   Reorders deck & resets deck_counter
+**/
 void Deck::shuffle()
 {
     Card * temp;
@@ -42,6 +49,8 @@ void Deck::shuffle()
         deck[i] = deck[r];
         deck[r] = temp;
     }
+
+    deck_counter = 0;
 }
 
 /**
@@ -54,17 +63,12 @@ void Deck::shuffle()
 **/
 Card * Deck::pop()
 {
-    Card * return_card;
-    int deck_size = deck.size() - 1;
+    Card * return_card = NULL;
 
-    if (deck_size >= 0)
+    if (deck_counter < (int) deck.size())
     {
-        return_card = deck[deck_size];
-        deck.pop_back();
-    }
-    else
-    {
-        return_card = NULL;
+        return_card = deck[deck_counter];
+        deck_counter++;
     }
 
     return return_card;

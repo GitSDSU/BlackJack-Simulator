@@ -21,6 +21,7 @@ class Deck
 
     private:
         cards deck;
+        int deck_counter;
 };
 
 #endif // DECK_H_INCLUDED
