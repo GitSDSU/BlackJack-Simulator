@@ -41,14 +41,28 @@ Card * Shoe::pop()
 
     while (return_card == NULL)
     {
-        return_card = shoe[i]->pop();
-        i--;
-        if (i < 0 && return_card == NULL)
+        if (i < 0)
         {
             std::cout << "Ran out of cards... \n";
             break;
         }
+
+        if (shoe[i]->Size() != 0)
+        {
+            return_card = shoe[i]->pop();
+        }
+        else
+        {
+            shoe.pop_back();
+            i--;
+            return_card = shoe[i]->pop();
+        }
     }
 
     return return_card;
+}
+
+int Shoe::Size() const
+{
+    return (int) shoe.size();
 }

@@ -69,3 +69,8 @@ Card * Deck::pop()
 
     return return_card;
 }
+
+int Deck::Size() const
+{
+    return (int) deck.size();
+}

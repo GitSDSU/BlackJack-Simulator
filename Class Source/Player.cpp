@@ -386,7 +386,7 @@ std::map< std::pair< int , int >, int > action_pair_map =
 Player::Player()
 {
     name = "Player";
-    hand.push_back(new Hand);
+    Add_Hand();
     chips = PLAYER_STARTING_CHIPS;
 }
 
@@ -400,21 +400,23 @@ void Player::Delete_Hand()
     for (auto it = hand.begin(); it != hand.end(); ++it)
     {
         (*it)->Delete_Hand();
+        delete (*it);
     }
     hand.clear();
 }
 
 void Player::Display_Hand() const
 {
-    int hand_counter = 1;
-
-    std::cout << "Player's hand: " << '\n';
+    std::cout << "Player: " << '\n';
+    std::cout << '\t' << "Chips = " << chips << '\n';
 
     for (auto it = hand.begin(); it != hand.end(); ++it)
     {
-        std::cout << "Hand " << hand_counter++ << ": " << '\n';
+        std::cout << '\t' << "Value = " << (*it)->Hand_Value() << '\n';
         (*it)->Display_Hand();
     }
+
+    std::cout << '\n';
 }
 
 void Player::Add_Hand()
@@ -425,6 +427,7 @@ void Player::Add_Hand()
 /**
 *   Assume player initially has one hand with 2 cards.
 *   Method first makes sure to split hands.
+*   Rename method to something more intuitive.
 **/
 int Player::Check_For_Split(const int dealer_card, Shoe * shoe)
 {
@@ -520,20 +523,39 @@ void Player::Subtract_Chips(int c)
 
 void Player::Receive_Card(const Card * new_card)
 {
+    if ((int) hand.size() == 0)
+    {
+        Add_Hand();
+    }
     hand[0]->Add_Card(new_card);
 }
 
+/**
+*   Any time a player's hand busts, the dealer takes all the earning regardless of what the dealer gets.
+*   Update function to reflect this condition.
+**/
 void Player::Compare_Hands(Dealer * dealer)
 {
     for (auto it = hand.begin(); it != hand.end(); ++it)
     {
-        if (dealer->Get_Hand_Value() < (*it)->Hand_Value())
+        if ((dealer->Get_Hand_Value() < (*it)->Hand_Value()) && ((*it)->Hand_Value() <= TWENTYONE))
         {
             /** Player Wins **/
             chips += (*it)->Get_Wager() * 2;
             dealer->Subtract_Chips((*it)->Get_Wager());
         }
-        else if (dealer->Get_Hand_Value() > (*it)->Hand_Value())
+        else if ((dealer->Get_Hand_Value() > (*it)->Hand_Value()) && (dealer->Get_Hand_Value() > TWENTYONE) && ((*it)->Hand_Value() <= TWENTYONE))
+        {
+            /** Player Wins **/
+            chips += (*it)->Get_Wager() * 2;
+            dealer->Subtract_Chips((*it)->Get_Wager());
+        }
+        else if ((dealer->Get_Hand_Value() > (*it)->Hand_Value()) && (dealer->Get_Hand_Value() <= TWENTYONE))
+        {
+            /** Player Loses **/
+            dealer->Add_Chips((*it)->Get_Wager());
+        }
+        else if ((dealer->Get_Hand_Value() < (*it)->Hand_Value()) && (dealer->Get_Hand_Value() <= TWENTYONE) && ((*it)->Hand_Value() > TWENTYONE))
         {
             /** Player Loses **/
             dealer->Add_Chips((*it)->Get_Wager());
@@ -551,6 +573,11 @@ void Player::Compare_Hands(Dealer * dealer)
                 /** Player Loses **/
                 chips -= ((*it)->Get_Wager() * 0.5);
                 dealer->Add_Chips((*it)->Get_Wager() * 1.5);
+            }
+            else if ((*it)->Hand_Value() > TWENTYONE)
+            {
+                /** Player Loses **/
+                dealer->Add_Chips((*it)->Get_Wager());
             }
             else
             {

@@ -15,6 +15,7 @@ class Deck
         int display() const;
         void shuffle();
         Card * pop();
+        int Size() const;
 
     protected:
 

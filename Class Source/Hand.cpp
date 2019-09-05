@@ -41,7 +41,10 @@ Card * Hand::Split_Hand()
     return temp;
 }
 
-/** The same algorithm is used for both players & dealers **/
+/**
+*   The same algorithm is used for both players & dealers.
+*   Error: StringValues & CardValues mess up the algorithm.
+**/
 int Hand::Hand_Value()
 {
     int hand_value = 0;
@@ -51,20 +54,20 @@ int Hand::Hand_Value()
     /** Count the # of times each rank appears in the hand **/
     for (auto card = hand.begin(); card != hand.end(); ++card)
     {
-        card_histogram[(*card)->get_rank()]++;
+        card_histogram[(*card)->get_rank()-1]++; /// T, J, Q, K all go in the same bin.
     }
 
     /** Add the values of each rank **/
     for (int i = NUM_RANKS - 1; i >= 0; i--)
     {
-        if (i == StringValues::ACE)
+        if (i == (CardValues::ACE - 1))
         {
             for (int j = 0; j < card_histogram[i]; j++)
             {
                 (hand_value > CardValues::TEN) ? hand_value += CardValues::ACE : hand_value += CardValues::ACE + CardValues::TEN;
             }
         }
-        else if (i >= StringValues::TEN && i <= StringValues::KING)
+        else if (i >= (CardValues::TEN - 1) && i <= (CardValues::KING - 1))
         {
             hand_value += (CardValues::TEN * card_histogram[i]);
         }

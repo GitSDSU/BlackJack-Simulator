@@ -16,6 +16,7 @@ class Shoe
         void display() const;
         void shuffle();
         Card * pop();
+        int Size() const;
 
     protected:
 

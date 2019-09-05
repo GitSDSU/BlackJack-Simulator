@@ -23,8 +23,11 @@ void Dealer::Receive_Card(const Card * new_card)
 
 void Dealer::Display_Hand() const
 {
-    std::cout << "Dealer's Hand: \n";
+    std::cout << "Dealer: " << '\n';
+    std::cout << '\t' << "Chips = " << chips << '\n';
+    std::cout << '\t' << "Value = " << hand->Hand_Value() << '\n';
     hand->Display_Hand();
+    std::cout << '\n';
 }
 
 void Dealer::Reset_Hand()

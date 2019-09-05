@@ -8,48 +8,6 @@ Card::Card(int r, int s)
     assert(r < NUM_RANKS);
     assert(s < NUM_SUITS);
 
-    switch (r)
-    {
-        case StringValues::ACE :
-            rank = CardValues::ACE;
-            break;
-        case StringValues::TWO :
-            rank = CardValues::TWO;
-            break;
-        case StringValues::THREE :
-            rank = CardValues::THREE;
-            break;
-        case StringValues::FOUR :
-            rank = CardValues::FOUR;
-            break;
-        case StringValues::FIVE :
-            rank = CardValues::FIVE;
-            break;
-        case StringValues::SIX :
-            rank = CardValues::SIX;
-            break;
-        case StringValues::SEVEN :
-            rank = CardValues::SEVEN;
-            break;
-        case StringValues::EIGHT :
-            rank = CardValues::EIGHT;
-            break;
-        case StringValues::NINE :
-            rank = CardValues::NINE;
-            break;
-        case StringValues::TEN :
-            rank = CardValues::TEN;
-            break;
-        case StringValues::JACK :
-            rank = CardValues::JACK;
-            break;
-        case StringValues::QUEEN :
-            rank = CardValues::QUEEN;
-            break;
-        case StringValues::KING :
-            rank = CardValues::KING;
-            break;
-    }
     rank = r;
     suit = s;
 }
@@ -67,7 +25,55 @@ Card::~Card()
 
 int Card::get_rank() const
 {
-    return rank;
+    int rank_value = 0;
+
+    switch (rank)
+    {
+        case StringValues::ACE :
+            rank_value = CardValues::ACE;
+            break;
+        case StringValues::TWO :
+            rank_value = CardValues::TWO;
+            break;
+        case StringValues::THREE :
+            rank_value = CardValues::THREE;
+            break;
+        case StringValues::FOUR :
+            rank_value = CardValues::FOUR;
+            break;
+        case StringValues::FIVE :
+            rank_value = CardValues::FIVE;
+            break;
+        case StringValues::SIX :
+            rank_value = CardValues::SIX;
+            break;
+        case StringValues::SEVEN :
+            rank_value = CardValues::SEVEN;
+            break;
+        case StringValues::EIGHT :
+            rank_value = CardValues::EIGHT;
+            break;
+        case StringValues::NINE :
+            rank_value = CardValues::NINE;
+            break;
+        case StringValues::TEN :
+            rank_value = CardValues::TEN;
+            break;
+        case StringValues::JACK :
+            rank_value = CardValues::JACK;
+            break;
+        case StringValues::QUEEN :
+            rank_value = CardValues::QUEEN;
+            break;
+        case StringValues::KING :
+            rank_value = CardValues::KING;
+            break;
+        default :
+            /** Should not get to this point. **/
+            break;
+    }
+
+    return rank_value;
 }
 
 int Card::get_suit() const
@@ -77,5 +83,5 @@ int Card::get_suit() const
 
 void Card::display() const
 {
-    std::cout << rank_string[rank] << " of " << suit_string[suit] << '\n' << std::flush;
+    std::cout << '\t' << rank_string[rank] << " of " << suit_string[suit] << '\n' << std::flush;
 }
