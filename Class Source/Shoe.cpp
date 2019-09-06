@@ -30,32 +30,22 @@ void Shoe::display() const
 void Shoe::shuffle()
 {
     for (auto it = shoe.begin(); it != shoe.end(); ++it)
+    {
         (*it)->shuffle();
+    }
 }
 
 Card * Shoe::pop()
 {
     Card * return_card = NULL;
 
-    int i = NUM_DECKS - 1;
-
-    while (return_card == NULL)
+    for (int i = 0; i < (int) shoe.size(); i++)
     {
-        if (i < 0)
-        {
-            std::cout << "Ran out of cards... \n";
-            break;
-        }
+        return_card = shoe[i]->pop();
 
-        if (shoe[i]->Size() != 0)
+        if (return_card != NULL)
         {
-            return_card = shoe[i]->pop();
-        }
-        else
-        {
-            shoe.pop_back();
-            i--;
-            return_card = shoe[i]->pop();
+            break;
         }
     }
 

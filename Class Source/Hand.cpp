@@ -19,6 +19,12 @@ void Hand::Add_Card(const Card * new_card)
     num_cards++;
 }
 
+void Hand::Add_Card(int rank, int suit)
+{
+    hand.push_back(new Card(rank, suit));
+    num_cards++;
+}
+
 void Hand::Delete_Hand()
 {
     for (auto it = hand.begin(); it != hand.end(); ++it)
@@ -31,14 +37,11 @@ void Hand::Delete_Hand()
 }
 
 /** Assumes hand only has 2 cards since a hand can only be split before hitting **/
-Card * Hand::Split_Hand()
+void Hand::Split_Hand(Hand * new_hand)
 {
-    Card * temp;
-    temp = hand[1];
-    hand.pop_back();
+    new_hand->Add_Card(hand[1]->get_rank(), hand[1]->get_suit());
+    delete (hand[1]);
     num_cards--;
-
-    return temp;
 }
 
 /**

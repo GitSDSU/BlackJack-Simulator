@@ -13,8 +13,9 @@ class Hand
         Hand();
         ~Hand();
         void Add_Card(const Card *);
+        void Add_Card(int, int);
         void Delete_Hand();
-        Card * Split_Hand();
+        void Split_Hand(Hand *);
         int Hand_Value();
         void Display_Hand() const;
         int Cards_In_Hand() const;

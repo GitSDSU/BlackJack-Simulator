@@ -27,6 +27,7 @@ Manager::~Manager()
 void Manager::test()
 {
     shoe->shuffle();
+
     long int counter = 1;
 
     while (counter <= NUM_HANDS)
@@ -49,14 +50,15 @@ void Manager::test()
         player->Delete_Hand();
         dealer->Reset_Hand();
 
-        if ((int) shoe->Size() < (NUM_DECKS - 1))
+        if (counter % 40 == 0)
         {
-            delete shoe;
-            shoe = new Shoe;
+            //delete shoe;
+            //shoe = new Shoe;
             shoe->shuffle();
         }
         counter++;
     }
     player->Display_Hand();
     dealer->Display_Hand();
+
 }
