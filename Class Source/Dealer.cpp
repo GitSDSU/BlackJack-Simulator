@@ -18,7 +18,7 @@ Dealer::~Dealer()
 
 void Dealer::Receive_Card(const Card * new_card)
 {
-    hand->Add_Card(new_card);
+    hand->Add_Card(new_card->get_rank(), new_card->get_suit());
 }
 
 void Dealer::Display_Hand() const

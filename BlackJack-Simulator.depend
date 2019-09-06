@@ -12,18 +12,18 @@
 	"Constants\global.h"
 	"Class Header\Manager.h"
 
-1567644965 c:\users\admin\desktop\blackjack-simulator\constants\global.h
+1567730965 c:\users\admin\desktop\blackjack-simulator\constants\global.h
 	<string>
 
-1567633656 source:c:\users\admin\desktop\blackjack-simulator\class source\deck.cpp
+1567662444 source:c:\users\admin\desktop\blackjack-simulator\class source\deck.cpp
 	"..\Class Header\Deck.h"
 	"..\Constants\global.h"
 	"..\Class Header\Card.h"
 
-1567633656 c:\users\admin\desktop\blackjack-simulator\class header\deck.h
+1567662433 c:\users\admin\desktop\blackjack-simulator\class header\deck.h
 	<vector>
 
-1567644868 source:c:\users\admin\desktop\blackjack-simulator\class source\shoe.cpp
+1567662433 source:c:\users\admin\desktop\blackjack-simulator\class source\shoe.cpp
 	"..\Class Header\Shoe.h"
 	"..\Constants\global.h"
 	"..\Class Header\Deck.h"
@@ -34,7 +34,7 @@
 
 1567479363 c:\users\admin\desktop\blackjack-simulator\class header\manager.h
 
-1567645043 source:c:\users\admin\desktop\blackjack-simulator\class source\manager.cpp
+1567730934 source:c:\users\admin\desktop\blackjack-simulator\class source\manager.cpp
 	"..\Class Header\Manager.h"
 	"..\Class Header\Shoe.h"
 	"..\Class Header\Dealer.h"
@@ -44,7 +44,7 @@
 	<iostream>
 	"..\Class Header\Card.h"
 
-1567645546 source:c:\users\admin\desktop\blackjack-simulator\class source\player.cpp
+1567730700 source:c:\users\admin\desktop\blackjack-simulator\class source\player.cpp
 	"..\Class Header\Player.h"
 	"..\Class Header\Card.h"
 	"..\Class Header\Hand.h"
@@ -59,22 +59,22 @@
 	<map>
 	<utility>
 
-1567629566 source:c:\users\admin\desktop\blackjack-simulator\class source\dealer.cpp
+1567729990 source:c:\users\admin\desktop\blackjack-simulator\class source\dealer.cpp
 	"..\Class Header\Dealer.h"
 	"..\Class Header\Card.h"
 	"..\Class Header\Hand.h"
 	"..\Class Header\Shoe.h"
 	"..\Constants\global.h"
 
-1567557618 c:\users\admin\desktop\blackjack-simulator\class header\dealer.h
+1567729990 c:\users\admin\desktop\blackjack-simulator\class header\dealer.h
 	<iostream>
 	<vector>
 
-1567629566 source:c:\users\admin\desktop\blackjack-simulator\class source\hand.cpp
+1567716115 source:c:\users\admin\desktop\blackjack-simulator\class source\hand.cpp
 	"..\Class Header\Hand.h"
 	"..\Class Header\Card.h"
 	"..\Constants\global.h"
 
-1567557618 c:\users\admin\desktop\blackjack-simulator\class header\hand.h
+1567716114 c:\users\admin\desktop\blackjack-simulator\class header\hand.h
 	<vector>
 

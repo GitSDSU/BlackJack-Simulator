@@ -459,14 +459,14 @@ int Player::Check_For_Split(const int dealer_card, Shoe * shoe)
         {
             case Action::Split :
             {
-                Hand * new_hand = new Hand;
-                new_hand->Set_Wager((*it)->Get_Wager());
-                new_hand->Add_Card((*it)->Split_Hand());
-                new_hand->Add_Card(shoe->pop());
-                hand.push_back(new_hand);
+                //hand.push_back(new Hand);
+                //hand[hand.size()-1]->Set_Wager((*it)->Get_Wager());
+                //(*it)->Split_Hand(hand[hand.size()-1]);
+                //hand[hand.size()-1]->Add_Card(shoe->pop());
                 (*it)->Add_Card(shoe->pop());
                 /** Reset the iterator to check if the hand needs to be split again. **/
-                it = hand.begin();
+                //it = hand.begin();
+                --it;
                 break;
             }
             case Action::Hit :
