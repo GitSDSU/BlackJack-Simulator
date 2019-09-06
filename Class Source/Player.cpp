@@ -433,45 +433,48 @@ int Player::Check_For_Split(const int dealer_card, Shoe * shoe)
 {
     int action = 0;
 
-    for (auto it = hand.begin(); it != hand.end(); ++it)
+    /**
+    *   Inserting new objects will invalidate the iterators.
+    *   Use index instead.
+    **/
+    for (int it = 0; it < (int) hand.size(); it++)
     {
-        if ((*it)->Is_Pair())
+        if ((hand[it])->Is_Pair())
         {
-            action = action_pair_map[std::make_pair((*it)->First_Card(), dealer_card)];
+            action = action_pair_map[std::make_pair((hand[it])->First_Card(), dealer_card)];
         }
         else if (hand[0]->Has_Ace())
         {
-            ((*it)->First_Card() == CardValues::ACE) ? action = action_ace_map[std::make_pair((*it)->Second_Card(), dealer_card)] :
-                                                    action = action_ace_map[std::make_pair((*it)->First_Card(), dealer_card)] ;
+            ((hand[it])->First_Card() == CardValues::ACE) ? action = action_ace_map[std::make_pair((hand[it])->Second_Card(), dealer_card)] :
+                                                    action = action_ace_map[std::make_pair((hand[it])->First_Card(), dealer_card)] ;
         }
         else
         {
-            if ((*it)->Hand_Value() > SEVENTEEN)
+            if ((hand[it])->Hand_Value() > SEVENTEEN)
             {
                 action = Action::Stand;
             }
             else
             {
-                action = action_map[std::make_pair((*it)->Hand_Value(), dealer_card)];
+                action = action_map[std::make_pair((hand[it])->Hand_Value(), dealer_card)];
             }
         }
         switch (action)
         {
             case Action::Split :
             {
-                //hand.push_back(new Hand);
-                //hand[hand.size()-1]->Set_Wager((*it)->Get_Wager());
-                //(*it)->Split_Hand(hand[hand.size()-1]);
-                //hand[hand.size()-1]->Add_Card(shoe->pop());
-                (*it)->Add_Card(shoe->pop());
+                hand.push_back(new Hand);
+                hand[hand.size()-1]->Set_Wager((hand[it])->Get_Wager());
+                (hand[it])->Split_Hand(hand[hand.size()-1]);
+                hand[hand.size()-1]->Add_Card(shoe->pop());
+                (hand[it])->Add_Card(shoe->pop());
                 /** Reset the iterator to check if the hand needs to be split again. **/
-                //it = hand.begin();
                 --it;
                 break;
             }
             case Action::Hit :
             {
-                (*it)->Add_Card(shoe->pop());
+                (hand[it])->Add_Card(shoe->pop());
                 /** Repeat the same hand **/
                 --it;
                 break;
@@ -483,14 +486,14 @@ int Player::Check_For_Split(const int dealer_card, Shoe * shoe)
             case Action::Double :
             {
                 /** If hand[i] has more than two cards then 'double' works as a 'hit'. Don't double the bet. **/
-                if ((*it)->Cards_In_Hand() == 2)
+                if ((hand[it])->Cards_In_Hand() == 2)
                 {
-                    (*it)->Double_Wager();
-                    (*it)->Add_Card(shoe->pop());
+                    (hand[it])->Double_Wager();
+                    (hand[it])->Add_Card(shoe->pop());
                 }
                 else
                 {
-                    (*it)->Add_Card(shoe->pop());
+                    (hand[it])->Add_Card(shoe->pop());
                     /** Repeat the same hand **/
                     --it;
                 }

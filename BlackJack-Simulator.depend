@@ -12,7 +12,7 @@
 	"Constants\global.h"
 	"Class Header\Manager.h"
 
-1567730965 c:\users\admin\desktop\blackjack-simulator\constants\global.h
+1567737651 c:\users\admin\desktop\blackjack-simulator\constants\global.h
 	<string>
 
 1567662444 source:c:\users\admin\desktop\blackjack-simulator\class source\deck.cpp
@@ -44,7 +44,7 @@
 	<iostream>
 	"..\Class Header\Card.h"
 
-1567730700 source:c:\users\admin\desktop\blackjack-simulator\class source\player.cpp
+1567737589 source:c:\users\admin\desktop\blackjack-simulator\class source\player.cpp
 	"..\Class Header\Player.h"
 	"..\Class Header\Card.h"
 	"..\Class Header\Hand.h"
